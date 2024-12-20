@@ -1,0 +1,22 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115.6",
+    "psycopg2>=2.9.10",
+    "ruff>=0.8.4",
+    "scalar-fastapi>=1.0.3",
+    "sqlmodel>=0.0.22",
+]
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
