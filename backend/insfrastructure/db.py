@@ -1,9 +1,21 @@
 # coding:utf-8
 
-from sqlalchemy import create_engine
-from sqlmodel import SQLModel, Session
+import os
 
-CONNECTION_STRING = "postgresql+psycopg2://postgres:postgres@localhost:5432/postgres"
+from dotenv import load_dotenv
+from sqlalchemy import create_engine
+from sqlmodel import Session, SQLModel
+
+load_dotenv()
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_HOST = os.getenv("DB_HOST")
+DB_PORT = os.getenv("DB_PORT")
+DB_NAME = os.getenv("DB_NAME")
+
+CONNECTION_STRING = (
+    f"postgresql+psycopg2://{DB_PASSWORD}:{DB_USER}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+)
 
 
 def initdb():
