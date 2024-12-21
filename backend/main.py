@@ -3,9 +3,10 @@
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from scalar_fastapi import get_scalar_api_reference
+
 from insfrastructure.db import initdb
 from presentation.routes import tasks_route
-from scalar_fastapi import get_scalar_api_reference
 
 
 @asynccontextmanager

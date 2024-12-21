@@ -2,11 +2,12 @@
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, responses, status
-from insfrastructure.db import get_session
-from insfrastructure.stores import TasksStore
 from sqlmodel import Session
 
-router = APIRouter(prefix="/tasks", tags=["Tasks"])
+from insfrastructure.db import get_session
+from insfrastructure.stores import TasksStore
+
+router = APIRouter(prefix="/api/tasks", tags=["Tasks"])
 
 
 @router.get("/")
